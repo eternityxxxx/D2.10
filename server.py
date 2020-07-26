@@ -37,10 +37,6 @@ def fail():
     result = HTTPError(status=500, body=message)
     return result
 
-if os.environ.get("APP_LOCATION") == "heroku":
-    run(
-        host="0.0.0.0",
-        port=int(os.environ.get("PORT", 5000)),
-    )
-else:
+
+if __name__ == "__main__":
     run(host="localhost", port=8080, debug=True)

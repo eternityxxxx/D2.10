@@ -1,9 +1,18 @@
 # D2.10
-
-<p>Чтобы проверить, что сервер действительно инегрирует с Sentry IO, нужно стянуть репозиторий к себе, и вот в этом месте: </p>
-<code>
+###### Чтобы проверить, что сервер действительно инегрирует с Sentry IO, нужно параметру dsn передать свои данные:
+```python
 sentry_sdk.init(
-    dsn="https://5b9737fb36de46ae9f6839efcbb1076d@o425255.ingest.sentry.io/5358991",
-    integrations=[BottleIntegration()]
+  dsn="", # Укажи свои данные
+  ntegrations=[BottleIntegration()]
 )
-</code>
+```
+
+##### После нужно запустить сервер:
+```
+python server.py
+```
+
+##### И в браузере перейти по такому маршруту:
+```
+http://localhost:8080/fail
+```
